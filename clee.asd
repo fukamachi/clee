@@ -19,4 +19,5 @@ CLEE is freely distributable under the MIT License (http://www.opensource.org/li
   :license "MIT"
   :depends-on (:cffi)
   :components ((:file "packages")
+               (:file "clee-ffi" :depends-on ("packages"))
                (:file "clee" :depends-on ("packages"))))

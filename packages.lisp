@@ -9,5 +9,9 @@ CLEE is freely distributable under the MIT License (http://www.opensource.org/li
 (in-package :cl-user)
 
 (defpackage :clee
+  (:use :cl)
+  (:export))
+
+(defpackage :clee-ffi
   (:use :cl :cffi)
   (:export))
