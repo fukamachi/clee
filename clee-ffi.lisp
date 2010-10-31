@@ -174,11 +174,11 @@
   (arg0 :pointer))
 
 (cffi:defcfun ("event_set" event-set) :void
-  (arg0 :pointer)
-  (arg1 :int)
-  (arg2 :short)
-  (arg3 :pointer)
-  (arg4 :pointer))
+  (ev :pointer)
+  (fd :int)
+  (flags :short)
+  (callback :pointer)
+  (arg :pointer))
 
 (cffi:defcfun ("event_once" event-once) :int
   (arg0 :int)

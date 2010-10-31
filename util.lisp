@@ -6,16 +6,9 @@ Copyright (c) 2010 Eitarow Fukamachi <e.arrows@gmail.com>
 CLEE is freely distributable under the MIT License (http://www.opensource.org/licenses/mit-license).
 |#
 
-(in-package :cl-user)
+(in-package :clee-util)
 
-(defpackage :clee
-  (:use :cl)
-  (:export))
-
-(defpackage :clee-util
-  (:use :cl)
-  (:export :get-file-handle))
-
-(defpackage :clee-ffi
-  (:use :cl :cffi)
-  (:export))
+(defun get-file-handle (stream direction)
+  #+ccl (ccl:stream-device stream direction)
+  ;; TODO: support more implementations
+  #-ccl (error "Your implementation seems to be not supported."))
